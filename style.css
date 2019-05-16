@@ -18,6 +18,14 @@ main {
   background-color: blue;
 }
 
+.text {
+  max-width: 500px;
+  /*no wider than 500px*/
+  margin: 0 auto;
+  /*reset margin and normalize*/
+  background-color: green;
+}
+
 .button {
   background-color: white;
   text-decoration: none;
