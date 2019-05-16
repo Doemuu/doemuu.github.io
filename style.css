@@ -1,0 +1,25 @@
+html {
+  max-width: auto;
+}
+
+main {
+  height: 100%;
+  background-color: red;
+  /*background color*/
+}
+
+#description {
+  max-width: 500px;
+  /*no wider than 500px*/
+  margin: 0 auto;
+  /*reset margin and normalize*/
+  text-align: center;
+  /*Text Centered*/
+  background-color: blue;
+}
+
+.button {
+  background-color: white;
+  text-decoration: none;
+  color: green;
+}
