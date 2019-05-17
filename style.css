@@ -1,5 +1,6 @@
 html {
   max-width: auto;
+  background-color: #3b3f3e;
 }
 
 main {
@@ -8,14 +9,25 @@ main {
   /*background color*/
 }
 
-#description {
-  max-width: 500px;
+.container {
+  max-width: 80%;
   /*no wider than 500px*/
   margin: 0 auto;
   /*reset margin and normalize*/
+  background-color: #576662;
   text-align: center;
   /*Text Centered*/
-  background-color: blue;
+}
+
+.container a {
+  margin-left: 45%;
+  margin-right: 45%;
+  width: 10%;
+  display: block;
+  box-sizing: border-box;
+  border: 5px solid #3b3f3e;
+  border-radius: 20px;
+  margin-bottom: 1%;
 }
 
 .text {
@@ -30,4 +42,31 @@ main {
   background-color: white;
   text-decoration: none;
   color: green;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
 }

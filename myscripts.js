@@ -1,5 +1,4 @@
-
-
+//logic
 function calculateAge() {
   var birthday = new Date();
   birthday.setFullYear(2000, 9, 12);
@@ -9,9 +8,12 @@ function calculateAge() {
 }
 
 function makeParagraph() {
+  var summer = new Date();
+  summer.setFullYear(2018, 9, 12);
   var mainText = document.getElementById("demo").innerHTML;
-  mainText = mainText.replace("?", calculateAge());
+  mainText = mainText.replace("/age", calculateAge());
   return mainText;
 }
 
+//build
 document.getElementById("demo").innerHTML = makeParagraph();
