@@ -19,10 +19,9 @@ main {
   margin: 0 auto;
   /*reset margin and normalize*/
   text-align: center;
-  padding-bottom: 2px;
+  padding: 250px;
   margin-top: 20px;
   /*Text Centered*/
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .text {
@@ -42,6 +41,10 @@ main {
   display: block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: red;
 }
 
 .topnav {
@@ -72,8 +75,12 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-  html, .topnav a {
+  html, .topnav a, .container {
     font-size: 12px;
+  }
+
+  .container {
+    padding: 50px;
   }
 
   .button {
