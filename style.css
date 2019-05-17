@@ -1,7 +1,9 @@
 html {
   max-width: auto;
-  background-color: #3b3f3e;
-  color: #bfbfbf;
+  color: white;
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -16,7 +18,6 @@ main {
   /*no wider than 500px*/
   margin: 0 auto;
   /*reset margin and normalize*/
-  background-color: #576662;
   text-align: center;
   padding-bottom: 2px;
   margin-top: 20px;
@@ -35,7 +36,7 @@ main {
 .button {
   background-color: #576662;
   text-decoration: none;
-  color: #bfbfbf;
+  color: white;
   margin: 0 auto;
   width: 200px;
   display: block;
@@ -51,7 +52,7 @@ main {
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #bfbfbf;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
