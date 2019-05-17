@@ -1,11 +1,13 @@
 html {
   max-width: auto;
   background-color: #3b3f3e;
+  color: #bfbfbf;
 }
 
 main {
   height: 100%;
-  background-color: red;
+  max-width: 1200px;
+  margin: 0 auto;
   /*background color*/
 }
 
@@ -16,18 +18,10 @@ main {
   /*reset margin and normalize*/
   background-color: #576662;
   text-align: center;
+  padding-bottom: 2px;
+  margin-top: 20px;
   /*Text Centered*/
-}
-
-.container a {
-  margin-left: 45%;
-  margin-right: 45%;
-  width: 10%;
-  display: block;
-  box-sizing: border-box;
-  border: 5px solid #3b3f3e;
-  border-radius: 20px;
-  margin-bottom: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .text {
@@ -39,9 +33,14 @@ main {
 }
 
 .button {
-  background-color: white;
+  background-color: #576662;
   text-decoration: none;
-  color: green;
+  color: #bfbfbf;
+  margin: 0 auto;
+  width: 200px;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 10px;
 }
 
 .topnav {
@@ -52,7 +51,7 @@ main {
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: #bfbfbf;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -69,4 +68,15 @@ main {
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+}
+
+@media screen and (max-width: 600px) {
+  html, .topnav a {
+    font-size: 12px;
+  }
+
+  .button {
+    width: 150px;
+  }
+}
 }
