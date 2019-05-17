@@ -45,6 +45,7 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 10px;
   padding: 10px;
+  transition: background-color 0.5s;
 }
 
 .button:hover {
@@ -79,6 +80,10 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+  html {
+    height: 100%;
+  }
+
   html, .topnav a, .container {
     font-size: 12px;
   }
@@ -89,6 +94,8 @@ main {
 
   .button {
     width: 150px;
+    padding: 5px;
+    font-size: 10px;
   }
 }
 }
