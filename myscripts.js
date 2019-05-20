@@ -62,7 +62,6 @@ function onContactButtonClicked() {
   }
 
   if (b) {
-    document.getElementById("lol").innerHTML = message;
     Email.send({
       SecureToken: "744700c4-a70f-4911-8076-3ccd29a6a0c1",
       To: 'dominik.berger17@outlook.com',
