@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>Contact</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -14,6 +16,25 @@
     <a class="active" href="/contact.html">Kontakt</a>
     <a href="/about-me.html">Über mich</a>
   </div>
+  <div class="container">
+    <h3> Sie möchten mich kontaktieren?</h3>
+    <p id="demo"></p>
+    <div>
+      <form>
+        <p class="nameLbl">Vorname: </p>
+        <p class="nameLbl">Nachname: </p>
+        <br>
+        <input class="nameInputs" type="text" id="firstNameText" name="firstname">
+        <input class="nameInputs" type="text" id="lastNameText" name="lastname">
+        <br>
+        <textarea id="messageText" name="message" rows="8" cols="80" placeholder="Schreiben Sie mir eine Nachricht"></textarea>
+      </form>
+      <br>
+      <a class="button" onclick="onContactButtonClicked()"> Senden </a>
+    </div>
+  </div>
+  <script src="myscripts.js"></script>
 </body>
+
 
 </html>

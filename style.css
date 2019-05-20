@@ -12,7 +12,6 @@ main {
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  /*background color*/
 }
 
 .container {
@@ -21,7 +20,7 @@ main {
   margin: 0 auto;
   /*reset margin and normalize*/
   text-align: center;
-  padding: 200px;
+  padding: 140px;
   margin-top: 20px;
   /*Text Centered*/
 }
@@ -69,14 +68,34 @@ main {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: lightgrey;
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: #535860;
   color: white;
+}
+
+
+.nameLbl {
+  padding: 80px;
+}
+
+.nameInputs {
+  display: inline;
+  width: 22%;
+  text-align: center;
+  color: white;
+  border: 0.5px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 10px;
+}
+
+form p {
+  display: inline;
 }
 
 @media screen and (max-width: 600px) {
@@ -88,8 +107,21 @@ main {
     font-size: 12px;
   }
 
+  textarea {
+    width: 90%;
+  }
+
   .container {
-    padding: 50px;
+    padding: 80px;
+  }
+
+  .nameLbl {
+    padding: 10px;
+  }
+
+  .nameInputs {
+    width: 80px;
+    margin-bottom: 5px;
   }
 
   .button {
@@ -97,5 +129,4 @@ main {
     padding: 5px;
     font-size: 10px;
   }
-}
 }
