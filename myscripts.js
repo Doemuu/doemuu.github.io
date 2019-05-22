@@ -23,6 +23,7 @@ function onContactButtonClicked() {
   var lastName = document.getElementById("lastNameText").value;
   var firstName = document.getElementById("firstNameText").value;
   var message = document.getElementById("messageText").value;
+  var urgency = document.getElementById("importance").value;
   if (lastName == "") {
     lastName = "wack";
     //lastName is null
@@ -61,21 +62,25 @@ function onContactButtonClicked() {
     document.getElementById("lastNameText").value = "";
   }
 
+  var bodymessage = urgency + "<br>" + message;
+
+
   if (b) {
     Email.send({
       SecureToken: "744700c4-a70f-4911-8076-3ccd29a6a0c1",
       To: 'dominik.berger17@outlook.com',
       From: "doemu@outlook.com",
       Subject: firstName + " " + lastName + " will dich kontaktieren",
-      Body: message
+      Body: bodymessage.replace("\n", "<br>")
     }).then(
-      message => alert(message)
+      message => alert("Danke " + firstName)
     );
   }
 
   document.getElementById("lastNameText").value = "";
   document.getElementById("firstNameText").value = "";
   document.getElementById("messageText").value = "";
+  document.getElementById("emailText").value = "";
 }
 
 //build

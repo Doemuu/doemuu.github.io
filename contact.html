@@ -16,21 +16,28 @@
     <a class="active" href="/contact.html">Kontakt</a>
     <a href="/about-me.html">Über mich</a>
   </div>
-  <div class="container">
+  <div>
     <h3> Sie möchten mich kontaktieren?</h3>
     <p id="demo"></p>
     <div>
-      <form>
-        <p class="nameLbl">Vorname: </p>
-        <p class="nameLbl">Nachname: </p>
+      <form class="container">
+        <input class="nameInputs" type="text" id="firstNameText" name="firstname" placeholder="Vorname" required>
+        <input class="nameInputs" type="text" id="lastNameText" name="lastname" placeholder="Nachname" required>
         <br>
-        <input class="nameInputs" type="text" id="firstNameText" name="firstname">
-        <input class="nameInputs" type="text" id="lastNameText" name="lastname">
+        <input type="mail" id="emailText" name="email" placeholder="Email" required>
         <br>
         <textarea id="messageText" name="message" rows="8" cols="80" placeholder="Schreiben Sie mir eine Nachricht"></textarea>
+        <br>
+        <select id="importance" name="importance">
+          <option value="Sehr dringlich">Sehr dringlich</option>
+          <option value="Dringlich">Dringlich</option>
+          <option value="Wichtig">Wichtig</option>
+          <option value="Unwichtig">Unwichtig</option>
+        </select>
+        <br>
+        <a class="button" onclick="onContactButtonClicked()"> Senden </a>
+
       </form>
-      <br>
-      <a class="button" onclick="onContactButtonClicked()"> Senden </a>
     </div>
   </div>
   <script src="myscripts.js"></script>
