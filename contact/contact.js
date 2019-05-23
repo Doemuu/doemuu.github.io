@@ -1,28 +1,13 @@
-//logic
-function calculateAge() {
-  var birthday = new Date();
-  birthday.setFullYear(2000, 9, 12);
-  var ageDifMs = Date.now() - birthday.getTime();
-  var ageDate = new Date(ageDifMs);
-  return Math.abs(ageDate.getUTCFullYear() - 1970);
-}
-
-function makeParagraph() {
-  var summer = new Date();
-  summer.setFullYear(2018, 9, 12);
-  var mainText = document.getElementById("demo").innerHTML;
-  mainText = mainText.replace("/age", calculateAge());
-  return mainText;
-}
-
 function onContactButtonClicked() {
   var b = false; //boolean to check all inputs
   var lastNamebool = false;
   var firstNameBool = false;
   var messageBool = false;
+  var emailBool = false;
   var lastName = document.getElementById("lastNameText").value;
   var firstName = document.getElementById("firstNameText").value;
   var message = document.getElementById("messageText").value;
+  var email = document.getElementById("emailText").value;
   var urgency = document.getElementById("importance").value;
   if (lastName == "") {
     lastName = "wack";
@@ -42,13 +27,24 @@ function onContactButtonClicked() {
   } else {
     messageBool = true;
   }
+  if (email == "") {
+    //email is null
+    email = "wack";
+  } else {
+    emailBool = true;
+  }
   if (lastNamebool) {
     //when lastName is correct
     if (firstNameBool) {
       //when firstName is correct
       if (messageBool) {
         //when message is correct
-        b = true;
+        if (emailBool) {
+          b = true;
+          document.getElementById("demo").value = email;
+        } else {
+          document.getElementById("emailText").value = "";
+        }
       } else {
         //when message is wack
         document.getElementById("messageText").value = "";
@@ -62,7 +58,7 @@ function onContactButtonClicked() {
     document.getElementById("lastNameText").value = "";
   }
 
-  var bodymessage = urgency + "<br>" + message;
+  var bodymessage = urgency + "<br>" + message + "<br>" + "Bitte auf " + email + " antworten!";
 
 
   if (b) {
@@ -73,7 +69,7 @@ function onContactButtonClicked() {
       Subject: firstName + " " + lastName + " will dich kontaktieren",
       Body: bodymessage.replace("\n", "<br>")
     }).then(
-      message => alert("Danke " + firstName)
+      message => alert("Ihre Anfrage wird bearbeitet " + firstName)
     );
   }
 
@@ -82,6 +78,3 @@ function onContactButtonClicked() {
   document.getElementById("messageText").value = "";
   document.getElementById("emailText").value = "";
 }
-
-//build
-document.getElementById("demo").innerHTML = makeParagraph();

@@ -24,12 +24,8 @@ main {
   /*Text Centered*/
 }
 
-.text {
-  max-width: 500px;
-  /*no wider than 500px*/
-  margin: 0 auto;
-  /*reset margin and normalize*/
-  background-color: green;
+.container p {
+  text-align: center;
 }
 
 .button:hover {
@@ -63,53 +59,9 @@ main {
   color: white;
 }
 
-#emailText {
-  color: white;
+#homeTitle {
+  padding-top: 15%;
   text-align: center;
-  border: 0.5px solid white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgba(0, 0, 0, 0);
-  width: 22%;
-  margin-left: 25%;
-  margin-bottom: 20px;
-}
-
-::placeholder {
-  color: white;
-}
-
-.nameInputs {
-  margin-right: 50px;
-  display: inline;
-  width: 22%;
-  text-align: center;
-  color: white;
-  border: 0.5px solid white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#importance {
-  margin-left: 45%;
-  width: 10%;
-  margin-bottom: 10px;
-}
-
-#firstNameText {
-  margin-left: 25%;
-}
-
-textarea {
-  margin-left: 25%;
-}
-
-textarea::placeholder {
-  color: grey;
-}
-
-h3 {
-  margin-left: 35%;
-  margin-top: 8%;
 }
 
 .button {
@@ -136,44 +88,8 @@ h3 {
     font-size: 12px;
   }
 
-  textarea {
-    width: 90%;
-  }
-
   .container {
     padding: 80px;
-  }
-
-  .nameInputs {
-    width: 90%;
-    margin-bottom: 10px;
-  }
-
-  #importance {
-    margin-left: 15%;
-    width: 60%;
-    margin-bottom: 10px;
-  }
-
-  #firstNameText {
-    margin-left: 0;
-  }
-
-  h3 {
-    margin-left: 1%;
-    text-align: center;
-    margin-top: 8%;
-  }
-
-  textarea {
-    white-space: pre-wrap;
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-
-  #emailText {
-    margin-left: 0;
-    width: 90%;
   }
 
   .button {

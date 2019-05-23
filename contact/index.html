@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -12,19 +12,19 @@
 <body>
   <div class="topnav">
     <a href="/">Home</a>
-    <a href="/projects.html">Projekte</a>
-    <a class="active" href="/contact.html">Kontakt</a>
-    <a href="/about-me.html">Über mich</a>
+    <a href="/projects">Projekte</a>
+    <a class="active" href="/contact">Kontakt</a>
+    <a href="/aboutme">Über mich</a>
   </div>
   <div>
-    <h3> Sie möchten mich kontaktieren?</h3>
+    <h3 id="contactTitle"> Sie möchten mich kontaktieren?</h3>
     <p id="demo"></p>
     <div>
       <form class="container">
         <input class="nameInputs" type="text" id="firstNameText" name="firstname" placeholder="Vorname" required>
         <input class="nameInputs" type="text" id="lastNameText" name="lastname" placeholder="Nachname" required>
         <br>
-        <input type="mail" id="emailText" name="email" placeholder="Email" required>
+        <input id="emailText" type="mail" name="email" placeholder="Email" required>
         <br>
         <textarea id="messageText" name="message" rows="8" cols="80" placeholder="Schreiben Sie mir eine Nachricht"></textarea>
         <br>
@@ -40,7 +40,7 @@
       </form>
     </div>
   </div>
-  <script src="myscripts.js"></script>
+  <script src="contact.js"></script>
 </body>
 
 
