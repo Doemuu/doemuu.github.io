@@ -49,13 +49,13 @@ main {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: lightgrey;
+  background-color: lightblue;
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #535860;
+  background-color: #1145a0;
   color: white;
 }
 
@@ -67,7 +67,7 @@ main {
 .button {
   font-size: 18px;
   text-align: center;
-  background-color: #576662;
+  background-color: #4365a0;
   text-decoration: none;
   color: white;
   margin: 0 auto;
