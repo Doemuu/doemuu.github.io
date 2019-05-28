@@ -14,7 +14,19 @@ main {
   margin: 0 auto;
 }
 
-.container {}
+#titel{
+  text-align: center;
+}
+
+.myown{
+  background-image: url("/images/bluesky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+  padding: 20px;
+  border: 0.5px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .button:hover {
   background-color: lightblue;
@@ -42,4 +54,25 @@ main {
 .topnav a.active {
   background-color: #535860;
   color: white;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    height: 100%;
+  }
+
+  html, .topnav a, .container {
+    font-size: 12px;
+  }
+
+  .myown {
+    padding: 80px;
+    text-align: center;
+  }
+
+  .button {
+    width: 150px;
+    padding: 5px;
+    font-size: 10px;
+  }
 }
