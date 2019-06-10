@@ -14,7 +14,7 @@ main {
   margin: 0 auto;
 }
 
-#titel {
+.titel {
   text-align: center;
 }
 
@@ -47,6 +47,17 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   min-width: 250px;
   flex: 1 1 0;
+}
+
+.hobbies{
+  font-size: 20px;
+  background-image: url("/images/bluesky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+  padding: 20px;
+  border: 0.5px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .button:hover {
