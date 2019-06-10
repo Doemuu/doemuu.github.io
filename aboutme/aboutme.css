@@ -64,22 +64,6 @@ main {
   border-bottom: 1.5px solid white;
 }
 
-.button {
-  font-size: 18px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid white;
-  text-decoration: none;
-  color: white;
-  margin: 0 auto;
-  width: 200px;
-  display: block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 20px;
-  padding: 10px;
-  transition: background-color 0.5s;
-}
-
 .button span {
   cursor: pointer;
   display: inline-block;

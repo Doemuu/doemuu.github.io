@@ -13,8 +13,49 @@ main {
   margin: 0 auto;
 }
 
+.button {
+  font-size: 18px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  margin: 0 auto;
+  width: 200px;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
+  padding: 10px;
+  transition: background-color 0.5s;
+}
+
 .button:hover {
   background-color: lightblue;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '>>';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .topnav {
@@ -42,21 +83,6 @@ main {
 .topnav a.active {
   background-color: #2a4575;
   color: white;
-}
-
-.button {
-  font-size: 18px;
-  text-align: center;
-  background-color: #4365a0;
-  text-decoration: none;
-  color: white;
-  margin: 0 auto;
-  width: 200px;
-  display: block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 20px;
-  padding: 10px;
-  transition: background-color 0.5s;
 }
 
 @media screen and (max-width: 600px) {
