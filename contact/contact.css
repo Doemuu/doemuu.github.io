@@ -1,19 +1,3 @@
-html {
-  max-width: auto;
-  color: white;
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("/images/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-main {
-  height: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .container {
   max-width: 80%;
   /*no wider than 500px*/
@@ -27,52 +11,6 @@ main {
 #contactTitle {
   margin-left: 35%;
   margin-top: 8%;
-}
-
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: lightgrey;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #535860;
-  color: white;
-}
-
-.button {
-  font-size: 18px;
-  text-align: center;
-  background-color: #576662;
-  text-decoration: none;
-  color: white;
-  margin: 0 auto;
-  width: 200px;
-  display: block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 20px;
-  padding: 10px;
-  transition: background-color 0.5s;
-}
-
-.button:hover {
-  background-color: lightblue;
 }
 
 textarea {
