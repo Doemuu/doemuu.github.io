@@ -7,7 +7,7 @@ html {
   color: white;
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #789edb;
+  background-color: #00519e;
   scroll-behavior: smooth;
 }
 
@@ -49,21 +49,20 @@ main {
 .button {
   font-size: 18px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid white;
+  border-radius: 7%;
+  box-shadow: 0 4px 2px -2px gold;
   text-decoration: none;
   color: white;
   margin: 0 auto;
   width: 200px;
   display: block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 20px;
   padding: 10px;
   transition: background-color 0.5s;
 }
 
 .button:hover {
-  background-color: lightblue;
+  background-color: #3f79b6;
 }
 
 .button span {
@@ -108,13 +107,13 @@ main {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: lightblue;
-  color: black;
+  background-color: #3f79b6;
+  color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #2a4575;
+  background-color: #ffdd00;
   color: white;
 }
 

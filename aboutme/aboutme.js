@@ -10,10 +10,10 @@ function calculateAge() {
 function makeParagraph() {
   var summer = new Date();
   summer.setFullYear(2018, 9, 12);
-  var mainText = document.getElementById("demo").innerHTML;
+  var mainText = document.getElementById("age").innerHTML;
   mainText = mainText.replace("/age", calculateAge());
   return mainText;
 }
 
 //build
-document.getElementById("demo").innerHTML = makeParagraph();
+document.getElementById("age").innerHTML = makeParagraph();
