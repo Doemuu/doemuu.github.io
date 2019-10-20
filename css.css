@@ -93,6 +93,10 @@ main {
 .topnav {
   background-color: #333;
   overflow: hidden;
+  border-bottom: 5px solid #333;
+  border-top: 5px solid #ffdd00;
+  border-right: 5px solid #333;
+  border-left: 5px solid #333;
 }
 
 /* Style the links inside the navigation bar */
