@@ -118,7 +118,7 @@ main {
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #ffdd00;
-  color: white;
+  color: #333;
 }
 
 @media screen and (max-width: 600px) {
