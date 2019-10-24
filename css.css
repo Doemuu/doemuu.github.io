@@ -1,5 +1,8 @@
 :root {
   --red: rgb(255, 0, 0);
+  --fcl-yellow: #ffdd00;
+  --fcl-blue-light: #3f79b6;
+  --fcl-grey: #333;
 }
 
 html {
@@ -11,6 +14,9 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  font-size: 0.7em;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -50,7 +56,7 @@ main {
   font-size: 18px;
   text-align: center;
   border-radius: 7%;
-  box-shadow: 0 4px 2px -2px gold;
+  box-shadow: 0 4px 2px -2px var(--fcl-yellow);
   text-decoration: none;
   color: white;
   margin: 0 auto;
@@ -62,7 +68,7 @@ main {
 }
 
 .button:hover {
-  background-color: #3f79b6;
+  background-color: var(--fcl-blue-light);
 }
 
 .button span {
@@ -91,12 +97,12 @@ main {
 }
 
 .topnav {
-  background-color: #333;
+  background-color: var(--fcl-grey);
   overflow: hidden;
-  border-bottom: 5px solid #333;
-  border-top: 5px solid #ffdd00;
-  border-right: 5px solid #333;
-  border-left: 5px solid #333;
+  border-bottom: 5px solid var(--fcl-grey);
+  border-top: 5px solid var(--fcl-yellow);
+  border-right: 5px solid var(--fcl-grey);
+  border-left: 5px solid var(--fcl-grey);
 }
 
 /* Style the links inside the navigation bar */
@@ -111,14 +117,14 @@ main {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #3f79b6;
+  background-color: var(--fcl-blue-light);
   color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #ffdd00;
-  color: #333;
+  background-color: var(--fcl-yellow);
+  color: var(--fcl-grey);
 }
 
 @media screen and (max-width: 600px) {
