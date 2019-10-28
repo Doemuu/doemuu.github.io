@@ -31,19 +31,19 @@ body{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--red);
+  background: var(--fcl-yellow);
   /*border-radius: 3px;
   box-shadow: var(--material-shadow);*/
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--red);
+  background: var(--fcl-yellow);
 }
 
 ::selection {
   color: white;
-  background: var(--red);
+  background: var(--fcl-yellow);
 }
 
 main {
