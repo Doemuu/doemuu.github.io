@@ -1,0 +1,16 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.footer {
+  width: auto;
+  padding-top: 15px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+}
+
+.container{
+  background-color: #f5f5f5;
+}
