@@ -73,7 +73,7 @@
     padding: 10px;
   }
 
-  .flag{
+  .icon {
     height: 60px;
     border-radius: 50%;
   }
@@ -84,6 +84,21 @@
     margin: auto;
     max-width: 80%;
     border-bottom: solid 1px var(--fcl-yellow);
+  }
+
+  .underlined {
+    margin: auto;
+    max-width: 80%;
+    border-bottom: solid 1px var(--fcl-yellow);
+  }
+
+  .xp {
+    margin-top: 5%;
+    font-weight: bold;
+  }
+
+  .spec {
+    display: flex;
   }
 
   /*responsive*/
