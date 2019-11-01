@@ -7,23 +7,18 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="/css.css">
+  <link href="/css/sticky-footer.css" rel="stylesheet">
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div class="topnav">
-    <a href="/">Home</a>
-    <a href="/projects">Projekte</a>
-    <a class="active" href="/contact">Kontakt</a>
-    <a href="/aboutme">Über mich</a>
-    <a href="/IMS">IMS</a>
-  </div>
+  <div w3-include-html="navContact.html"></div>
   <div>
     <h3 id="contactTitle"> Sie möchten mich kontaktieren?</h3>
     <p id="demo"></p>
     <div>
-      <form class="container">
+      <form class="info">
         <input class="nameInputs" type="text" id="firstNameText" name="firstname" placeholder="Vorname" required>
         <input class="nameInputs" type="text" id="lastNameText" name="lastname" placeholder="Nachname" required>
         <br>
@@ -39,12 +34,13 @@
         </select>
         <br>
         <a class="button" onclick="onContactButtonClicked()"> Senden </a>
-
       </form>
     </div>
   </div>
   <script src="contact.js"></script>
 </body>
-
+<div w3-include-html="../footer.html">
+</div>
+<script src="../include.js"></script>
 
 </html>

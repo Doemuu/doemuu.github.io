@@ -13,13 +13,7 @@
 </head>
 
 <body>
-  <div class="topnav">
-    <a href="/">Home</a>
-    <a href="/projects">Projekte</a>
-    <a href="/contact">Kontakt</a>
-    <a class="active" href="/aboutme">Über mich</a>
-    <a href="/IMS">IMS</a>
-  </div>
+  <div w3-include-html="navAboutMe.html"></div>
   <main>
     <div id="personal">
       <div id="personalien">
@@ -265,13 +259,9 @@
     <br>
     <br>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      <span>Place sticky footer content here.</span>
-    </div>
-  </footer>
-
+  <div w3-include-html="../footer.html">
+  </div>
+  <script src="../include.js"></script>
   <script src="aboutme.js"></script>
 </body>
 

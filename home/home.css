@@ -13,7 +13,7 @@ main {
   margin: 0 auto;
 }
 
-.container {
+.greeting {
   max-width: 80%;
   /*no wider than 500px*/
   margin: 0 auto;

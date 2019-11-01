@@ -7,16 +7,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
   <link rel="stylesheet" href="projects.css">
   <link rel="stylesheet" href="/css.css">
+  <link href="/css/sticky-footer.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="topnav">
-    <a href="/">Home</a>
-    <a class="active" href="/projects">Projekte</a>
-    <a href="/contact">Kontakt</a>
-    <a href="/aboutme">Über mich</a>
-    <a href="/IMS">IMS</a>
-  </div>
+  <div w3-include-html="navProjects.html"></div>
   <h1>ja lol</h1>
   <div class="box">
     <h2 id="java">Java-Projekte</h2>
@@ -57,6 +52,11 @@
   <div class="box">
     <h2 id="csharp">C#-Projekte</h2>
   </div>
-</body>
+  <br><br>
 
+  <div w3-include-html="../footer.html">
+  </div>
+
+</body>
+<script src="../include.js"></script>
 </html>
