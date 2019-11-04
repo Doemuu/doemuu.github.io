@@ -7,13 +7,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
   <link rel="stylesheet" href="aboutme.css">
   <link rel="stylesheet" href="/css.css">
-
   <link href="/css/sticky-footer.css" rel="stylesheet">
+  <script type="text/javascript" src="../doemuu.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div w3-include-html="navAboutMe.html"></div>
+  <div include-html="navAboutMe.html"></div>
   <main>
     <div id="personal">
       <div id="personalien">
@@ -259,9 +259,11 @@
     <br>
     <br>
   </main>
-  <div w3-include-html="../footer.html">
+  <div include-html="../footer.html">
   </div>
-  <script src="../include.js"></script>
+  <script type="text/javascript">
+    includeHTML();
+  </script>
   <script src="aboutme.js"></script>
 </body>
 

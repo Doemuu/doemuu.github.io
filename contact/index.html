@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="/css.css">
   <link href="/css/sticky-footer.css" rel="stylesheet">
   <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript" src="../doemuu.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div w3-include-html="navContact.html"></div>
+  <div include-html="navContact.html"></div>
   <div>
     <h3 id="contactTitle"> Sie möchten mich kontaktieren?</h3>
     <p id="demo"></p>
@@ -39,8 +40,10 @@
   </div>
   <script src="contact.js"></script>
 </body>
-<div w3-include-html="../footer.html">
+<div include-html="../footer.html">
 </div>
-<script src="../include.js"></script>
+<script type="text/javascript">
+  includeHTML();
+</script>
 
 </html>

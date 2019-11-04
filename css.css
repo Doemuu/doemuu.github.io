@@ -96,37 +96,6 @@ main {
   right: 0;
 }
 
-.topnav {
-  background-color: var(--fcl-grey);
-  overflow: hidden;
-  border-bottom: 5px solid var(--fcl-grey);
-  border-top: 5px solid var(--fcl-yellow);
-  border-right: 5px solid var(--fcl-grey);
-  border-left: 5px solid var(--fcl-grey);
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: var(--fcl-blue-light);
-  color: white;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: var(--fcl-yellow);
-  color: var(--fcl-grey);
-}
-
 @media screen and (max-width: 600px) {
   html {
     height: 100%;
