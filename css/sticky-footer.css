@@ -12,6 +12,7 @@
 }
 
 .footercontainer{
+  padding: 1vh;
   background-color: var(--fcl-grey);
 }
 

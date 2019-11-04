@@ -54,7 +54,6 @@
   #moi {
     height: 100%;
     width: 85%;
-    border-radius: 100%;
     min-height: 200px;
     min-width: 130px;
   }
@@ -75,7 +74,6 @@
 
   .pic {
     height: 60px;
-    border-radius: 50%;
   }
 
   /*Container of school*/

@@ -8,23 +8,22 @@
   <link rel="stylesheet" href="aboutme.css">
   <link rel="stylesheet" href="/css.css">
   <link href="/css/sticky-footer.css" rel="stylesheet">
+  <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../doemuu.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <div include-html="navAboutMe.html"></div>
+  <div include-html="../sideBar.html"></div>
+
   <main>
     <div id="personal">
       <div id="personalien">
-
-
         <h3>Personalien</h3>
         <div class="box" id="picture">
           <img id="moi" src="/images/me.jpg" alt="Dominik Berger">
         </div>
-
-
         <div class="flextop" id="firstflex">
           <div class="box">
             <p><img class="imageIcon" id="person" src="/images/person.png" /></p>
@@ -140,15 +139,7 @@
           <div class="box">
             <a href="/projects/index.html#html"><img class="pic" src="/images/html.png" /></a>
             <div class="answer">
-              <p class="answerp">HTML</p>
-            </div>
-          </div>
-        </div>
-        <div class="flextop">
-          <div class="box">
-            <a href="/projects/index.html#css"><img class="pic" src="/images/css.png" /></a>
-            <div class="answer">
-              <p class="answerp">CSS</p>
+              <p class="answerp">HTML, CSS</p>
             </div>
           </div>
         </div>
@@ -265,6 +256,7 @@
     includeHTML();
   </script>
   <script src="aboutme.js"></script>
+  <script src="../sidebar.js"></script>
 </body>
 
 </html>
