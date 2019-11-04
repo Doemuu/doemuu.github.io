@@ -11,6 +11,13 @@
   position: fixed;
 }
 
-.container{
+.footercontainer{
   background-color: var(--fcl-grey);
+}
+
+@media screen and (max-width: 600px) {
+  .footercontainer{
+    padding: 15px;
+    font-size: 12px;
+  }
 }
