@@ -3,7 +3,6 @@ var open = false;
 waitForEl("#mySidebar", function(){
   $("#mySidebar > a").on("click", function(){
     closeNav();
-    console.log("test");
   });
 });
 

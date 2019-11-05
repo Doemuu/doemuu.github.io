@@ -1,24 +1,50 @@
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
-
 .footer {
   width: auto;
-  padding-top: 15px;
+  padding-top: 12px;
   bottom: 0;
-  right: 0;
-  left: 0;
+  right: 1%;
+  left: 1%;
   position: fixed;
 }
 
-.footercontainer{
-  padding: 1vh;
+.footercontainer {
   background-color: var(--fcl-grey);
+  display: flex;
+  max-height: 60px;
+  height: 10%;
+  justify-content: space-between;
+}
+
+#links {
+  margin-left: 5%;
+}
+
+#linkedIn {
+  padding: 0px;
+  height: 100%;
+}
+
+#topBtn {
+  margin-right: 5%;
+}
+
+#up {
+  width: 100%;
+}
+
+button{
+  background-color: transparent;
+  cursor: pointer;  
+  border: none;
+  outline: none;
 }
 
 @media screen and (max-width: 600px) {
-  .footercontainer{
-    padding: 15px;
+  .footercontainer {
+    height: 30px;
     font-size: 12px;
   }
 }

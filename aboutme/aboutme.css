@@ -5,7 +5,10 @@
     border-right: 5px solid var(--fcl-grey);
     border-left: 5px solid var(--fcl-grey);
     margin: auto;
+    height: auto;
     width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
     background-color: var(--fcl-grey);
     padding-bottom: 10px;
@@ -54,8 +57,6 @@
   #moi {
     height: 100%;
     width: 85%;
-    min-height: 200px;
-    min-width: 130px;
   }
 
   /*Subttitle schools*/
@@ -102,6 +103,9 @@
   /*responsive*/
   @media only screen and (max-width: 600px) {
     .imageIcon {
+      height: 40px;
+    }
+    .pic{
       height: 40px;
     }
   }
