@@ -19,32 +19,37 @@
 }
 
 #links {
+  padding: 1vh;
   margin-left: 5%;
 }
 
-#linkedIn {
-  padding: 0px;
-  height: 100%;
+.linkedIn {
+  height: 35px;
 }
 
 #topBtn {
-  margin-right: 5%;
+  margin-right: 15px;
 }
 
 #up {
   width: 100%;
 }
 
-button{
+button {
   background-color: transparent;
-  cursor: pointer;  
+  background-size: contain;
+  cursor: pointer;
   border: none;
   outline: none;
 }
 
 @media screen and (max-width: 600px) {
   .footercontainer {
-    height: 30px;
     font-size: 12px;
   }
+
+  .linkedIn {
+    height: 20px;
+  }
+
 }
