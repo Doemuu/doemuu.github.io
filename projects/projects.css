@@ -25,7 +25,6 @@
 .toptext {
   margin-left: 1vw;
   width: 70%;
-  min-width: 170px;
   float: left;
   border-bottom: var(--fcl-yellow) solid 0.2vh;
 }
@@ -50,7 +49,7 @@
   padding-bottom: 1vh;
   margin-left: 1vw;
   width: 70%;
-  min-width: 170px;
+  min-width: 120px;
   float: left;
 }
 
@@ -63,17 +62,17 @@
   margin-left: 0 !important;
   margin-left: 1vh;
   width: 70%;
-  min-width: 170px;
+  min-width: 130px;
 }
 
-.description:hover{
+.description:hover {
   background-color: transparent !important;
 }
 
 .description2 {
   margin-left: 1vh;
   width: 100%;
-  min-width: 170px;
+  min-width: 140px;
 }
 
 .righttitle {
@@ -95,6 +94,10 @@
   line-height: 0.4vh;
 }
 
+.belonging a{
+  line-height: normal;
+}
+
 .link {
   color: white;
   text-decoration: none;
@@ -102,4 +105,10 @@
 
 .link:hover {
   color: var(--fcl-yellow);
+}
+
+@media screen and (max-width: 600px) {
+  .projectcontainer {
+    width: 80%;
+  }
 }
