@@ -111,4 +111,7 @@
   .projectcontainer {
     width: 80%;
   }
+  .righttitle{
+    margin-top: 2vh;
+  }
 }
