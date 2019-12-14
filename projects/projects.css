@@ -1,0 +1,105 @@
+.projectcontainer {
+  width: 60%;
+  margin: 0 auto;
+  min-width: 200px;
+  margin-top: 1vh;
+  padding-top: 1vh;
+  bottom: 0;
+  background-color: var(--fcl-grey);
+}
+
+.projectcontainer p {
+  word-wrap: break-word;
+}
+
+.title {
+  text-align: center;
+}
+
+.topbox {
+  width: 90%;
+  margin-left: 2.5vw;
+  display: inline-block;
+}
+
+.toptext {
+  margin-left: 1vw;
+  width: 70%;
+  min-width: 170px;
+  float: left;
+  border-bottom: var(--fcl-yellow) solid 0.2vh;
+}
+
+.topinnerrightbox {
+  margin-top: 5vh;
+  margin-right: 1vw;
+  text-align: center;
+  border-top: solid var(--fcl-yellow) 0.5vh;
+  width: 25%;
+  min-width: 60px;
+  float: right;
+}
+
+.outerbox {
+  width: 90%;
+  margin-left: 2.5vw;
+  display: inline-block;
+}
+
+.text {
+  padding-bottom: 1vh;
+  margin-left: 1vw;
+  width: 70%;
+  min-width: 170px;
+  float: left;
+}
+
+.boxtitle {
+  text-align: center;
+}
+
+.description {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-left: 1vh;
+  width: 70%;
+  min-width: 170px;
+}
+
+.description:hover{
+  background-color: transparent !important;
+}
+
+.description2 {
+  margin-left: 1vh;
+  width: 100%;
+  min-width: 170px;
+}
+
+.righttitle {
+  margin-top: 4vh;
+  text-decoration: underline;
+}
+
+.innerRightbox {
+  box-shadow: 0.2vh 0.2vh 1vh 0.1vh grey;
+  margin-right: 1vw;
+  text-align: center;
+  border-top: solid var(--fcl-yellow) 0.5vh;
+  width: 25%;
+  min-width: 60px;
+  float: right;
+}
+
+.belonging {
+  line-height: 0.4vh;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--fcl-yellow);
+}
