@@ -38,40 +38,12 @@
   float: right;
 }
 
-.outerbox {
-  width: 90%;
-  margin-left: 2.5vw;
-  display: inline-block;
-}
-
-.text {
-  padding-bottom: 1vh;
-  margin-left: 1vw;
-  width: 70%;
-  min-width: 120px;
-  float: left;
+.continueButton {
+  width: 80% !important;
 }
 
 .boxtitle {
   text-align: center;
-}
-
-.description {
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-left: 1vh;
-  width: 70%;
-  min-width: 130px;
-}
-
-.description:hover {
-  background-color: transparent !important;
-}
-
-.description2 {
-  margin-left: 1vh;
-  width: 100%;
-  min-width: 140px;
 }
 
 .righttitle {
@@ -79,21 +51,63 @@
   text-decoration: underline;
 }
 
-.innerRightbox {
-  box-shadow: 0.2vh 0.2vh 1vh 0.1vh grey;
-  margin-right: 1vw;
+.outerbox {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.innerbox {
+  flex: 1 1 0;
+  flex-grow: 0;
+  min-width: 200px;
+  box-shadow: 2px 2px 10px 1px grey;
+  margin: 10px;
+  padding: 10px;
   text-align: center;
   border-top: solid var(--fcl-yellow) 0.5vh;
   width: 25%;
-  min-width: 60px;
-  float: right;
+  perspective: 1000px;
+}
+
+.innerbox-card {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.innerbox:hover .innerbox-card {
+  transform: rotateY(180deg);
+}
+
+.innerboxfront, .innerboxback {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.innerboxfront {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerboxback {
+  transform: rotateY(180deg);
 }
 
 .belonging {
   line-height: 0.4vh;
 }
 
-.belonging a{
+.belonging a {
   line-height: normal;
 }
 
@@ -109,8 +123,5 @@
 @media screen and (max-width: 600px) {
   .projectcontainer {
     width: 80%;
-  }
-  .righttitle{
-    margin-top: 2vh;
   }
 }
