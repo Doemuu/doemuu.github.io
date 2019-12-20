@@ -101,10 +101,6 @@ main {
     height: 100%;
   }
 
-  html, .topnav a, .container {
-    font-size: 12px;
-  }
-
   .container {
     padding: 80px;
   }
