@@ -79,6 +79,7 @@
 
   /*Container of school*/
   .brakeDiv {
+    word-break: break-word;
     display: flex;
     margin: auto;
     max-width: 80%;
