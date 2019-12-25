@@ -1,10 +1,96 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Eigene Webseite</title>
-  </head>
-  <body>
-<h1>This site is currently under construction</h1>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Projects</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="stylesheet" href="/css.css">
+  <link rel="stylesheet" href="/projects/projects.css">
+  <link href="/css/sticky-footer.css" rel="stylesheet">
+
+  <script type="text/javascript" src="../../jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../../doemuu.js"></script>
+</head>
+
+<body>
+  <div include-html="../navProjects.html"></div>
+  <div class="projectcontainer">
+    <h1 class="title">Eigene Webseite</h1>
+    <div class="vessel">
+      <h3 class="title">Anforderungen</h3>
+      <div class="reposisivetable">
+        <table>
+          <tr>
+            <th>#</th>
+            <th>Anforderung/Regel</th>
+            <th>Beschreibung</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Portfolio</td>
+            <td>Die Webseite soll das Portfolio beinhalten.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Dokumentation</td>
+            <td>Die Projekte aus dem Portfolio werden korrekt und sauber dokumentiert.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Individualität</td>
+            <td>Die Seite muss einen persönlichen Touch haben und soll den Besucher spüren lassen, wer ich bin.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Erweiterbarkeit</td>
+            <td>Die Webseite ist dazu gedacht mein Portfolio zu unterstützen, weshalb immer neue Projekte und Reiter entstehen können sollen.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Beispiel</td>
+            <td>Die Seite selbst soll ein Vorzeigebeispiel sein.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Einfachheit</td>
+            <td>Die Seite wird nicht durch andere Frameworks als JQuery ergänzt</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Einfachheit</td>
+            <td>Die Seite wird nicht mit anderen Sprachen als HTML, CSS und Javascript ergänzt.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="vessel">
+      <h3 class="title">UseCase</h3>
+      <img id="usecase" src="/images/usecase.png" alt="UseCase">
+      <div id="usecaseModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="altusecase">
+        <div id="caption">sup</div>
+      </div>
+    </div>
+    <div class="vessel">
+      <h3 class="title">MockUp</h3>
+    </div>
+    <div class="boxdocu">
+      <p class="text">This site is currently under construction</p>
+      <p class="side">World</p>
+    </div>
+  </div>
+  <br><br>
+  <br><br>
+  <div include-html="../../footer.html">
+  </div>
+
+</body>
+<script type="text/javascript" src="../projects.js"></script>
+<script type="text/javascript">
+  includeHTML();
+</script>
+<script src="../footer.js"></script>
+
 </html>
