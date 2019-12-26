@@ -8,27 +8,42 @@
   background-color: var(--fcl-grey);
 }
 
-
-.boxdocu{
+.boxdocu {
   display: flex;
   justify-content: center;
 }
 
-.text{
-  flex: 0.8;
+.text {
+  flex: 1 1 0;
+  text-align: justify;
+  word-spacing: normal !important;
 }
 
-.side{
+.code {
+  padding: 5px;
+  background-color: var(--fcl-yellow);
+  color: var(--fcl-grey);
+  opacity: 0.6;
+  box-shadow: 2px 2px 10px 1px grey;
 }
 
-.vessel{
+.code-background {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.vessel {
   border-bottom: solid 2px var(--fcl-yellow);
   padding-bottom: 10px;
   width: 80%;
   margin: 0 auto;
 }
 
-
+.lowestvessel{
+  padding-bottom: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
 
 .projectcontainer p {
   word-wrap: break-word;
@@ -94,6 +109,17 @@
   perspective: 1000px;
 }
 
+.innerboxproject {
+  flex: 1 1 0;
+  flex-grow: 0;
+  min-width: 200px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 25%;
+  perspective: 1000px;
+}
+
 .innerbox-card {
   position: relative;
   width: 100%;
@@ -142,7 +168,7 @@
   color: var(--fcl-yellow);
 }
 
-.reposisivetable{
+.reposisivetable {
   overflow-x: auto;
 }
 
@@ -158,31 +184,59 @@ td, th {
   padding: 8px;
 }
 
+.abc {
+  width: 100%;
+}
+
+.abc:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
 
 #usecase:hover {
   opacity: 0.7;
-  }
-
-  #usecase{
-    margin-left: 25%;
-    width: 50%;
-  }
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-/* Modal Content (image) */
+#usecase {
+  margin-left: 25%;
+  width: 50%;
+}
+
+#projectshtmlsnipplet {
+  margin-left: 25%;
+  width: 50%;
+}
+
+#includesnipplet{
+  margin-left: 25%;
+  width: 50%;
+}
+
+/* The Modal */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
 .modal-content {
   margin: auto;
   display: block;
@@ -190,7 +244,7 @@ td, th {
   max-width: 700px;
 }
 
-/* Caption of Modal Image */
+/* Caption */
 #caption {
   margin: auto;
   display: block;
@@ -211,15 +265,24 @@ td, th {
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)}
-  to {-webkit-transform:scale(1)}
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
 }
 
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
+  from {
+    transform: scale(0)
+  }
 
+  to {
+    transform: scale(1)
+  }
+}
 
 /* The Close Button */
 .close {
@@ -239,10 +302,20 @@ td, th {
   cursor: pointer;
 }
 
-
-
-
 @media screen and (max-width: 600px) {
+
+  .text{
+    font-size: 12px;
+  }
+
+  .side{
+    font-size: 12px;
+  }
+
+  .code-background {
+    width: 100%;
+  }
+
   .projectcontainer {
     width: 80%;
   }

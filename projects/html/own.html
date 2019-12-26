@@ -15,6 +15,14 @@
 
 <body>
   <div include-html="../navProjects.html"></div>
+
+  <!-- This is the Modal-->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="alt">
+    <div id="caption"></div>
+  </div>
+
   <div class="projectcontainer">
     <h1 class="title">Eigene Webseite</h1>
     <div class="vessel">
@@ -66,20 +74,87 @@
     </div>
     <div class="vessel">
       <h3 class="title">UseCase</h3>
-      <img id="usecase" src="/images/usecase.png" alt="UseCase">
-      <div id="usecaseModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="altusecase">
-        <div id="caption">sup</div>
-      </div>
+      <img id="usecase" class="abc" onclick="modal(this)" src="/images/usecase.png" alt="UseCase">
     </div>
     <div class="vessel">
       <h3 class="title">MockUp</h3>
+      <div class="outerbox">
+        <div class="innerboxproject">
+          <img id="homemockup" class="abc" onclick="modal(this)" src="/images/homemockup.png" alt="Home-MockUp">
+          <div style="background-color:var(--fcl-yellow); color:var(--fcl-grey);">
+            <span>Home</span>
+          </div>
+        </div>
+        <div class="innerboxproject">
+          <img id="projektemockup" class="abc" onclick="modal(this)" src="/images/projekte.png" alt="Projekte-MockUp">
+          <div style="background-color:var(--fcl-yellow); color:var(--fcl-grey);">
+            <span>Projekte</span>
+          </div>
+        </div>
+        <div class="innerboxproject">
+          <img id="kontaktmockup" class="abc" onclick="modal(this)" src="/images/kontakt.png" alt="Kontakt-MockUp">
+          <div style="background-color:var(--fcl-yellow); color:var(--fcl-grey);">
+            <span>Kontakt</span>
+          </div>
+        </div>
+        <div class="innerboxproject">
+          <img id="aboutmemockup" class="abc" onclick="modal(this)" src="/images/aboutmemockup.png" alt="AboutMe-MockUp">
+          <div style="background-color:var(--fcl-yellow); color:var(--fcl-grey);">
+            <span>About Me</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="boxdocu">
-      <p class="text">This site is currently under construction</p>
-      <p class="side">World</p>
+    <div class="vessel">
+      <h3 class="title">Host</h3>
+      <p class="text">Nachdem ein Klassenkamerad, von der Möglichkeit eine Webseite gratis auf GitHub hosten zu können,
+        erzählt hatte. Entschied ich mich dazu mich in die GitHub Pages einzulesen. Trotz den gewissen Einschränkungen,
+        wie beispielsweise die Verunmöglichung der Verwendung von «PHP», entschied ich mich die überwiegenden Vorteile zu nutzen.
+        Auch die Wartung der Webseite wurde dadurch einfacher. Die Seite wird durch ein einfaches Repository geführt und kann
+        dadurch mit jedem «commit», «push» und «pull request» verändert werden.</p>
+      <h3 class="title">Editor</h3>
+      <p class="text">Als Editor der verschiedenen Daten verwende ich den Atom Texteditor. Dieser bringt mit der direkten Verknüpfung
+        zu GitHub und den downloadbaren Packages alle Voraussetzungen mit. Ich verwende für dieses Projekt die Erweiterungspakete
+        <a class="link" href="https://atom.io/packages/atom-live-server" target="_blank">«atom-live-server»</a>,
+        <a class="link" href="https://atom.io/packages/atom-file-icons" target="_blank">«atom-file-icons»</a> und den
+        <a class="link" href="https://atom.io/packages/color-picker" target="_blank">«color-picker»</a>. Diese Pakete sind zum grössten Teil «Verschönerungspakete»,
+        die die Arbeit im Editor angenehmer gestalten. Doch der Liveserver ist als lokal betriebener Server perfekt für das schnelle
+        und einfache Testen der Applikation geeignet.</p>
     </div>
+    <div class="vessel">
+      <h3 class="title">Individualität</h3>
+      <p class="text">Um die Individualität und den persönlichen Bezug sicherzustellen, entschied ich mich für die Verwendung eines bestimmten Farbpalette.
+        Mit einem Bot eines Schulkameraden, konnte ich die genauen Farben des Fussball Clubs Luzern Logos ausfindig machen.
+        Diese verwende ich nun als Grundfarben meines Designs. </p>
+      <div class="codecomprehension">
+        <div class="code">
+          <div class="code-background">
+            <span>1.:root { <br>2. <u>--fcl-yellow: #ffdd00;</u><br>3. <u>--fcl-blue-light: #3f79b6;</u><br>4. <u>--fcl-grey: #333;</u><br>5.}</span>
+          </div>
+        </div>
+      </div>
+      <h3 class="title">Erweiterbarkeit</h3>
+      <p class="text">Die Erweiterbarkeit ist durch die Verwendung von einfachen CSS-Klassen in den Reitern Projekte und About Me. Somit kann einfach ein Projekt einer
+        Sprache oder sogar eine neue Sprache hinzugefügt werden. Dasselbe zählt auch für die About Me Attribute.</p>
+      <img id="projectshtmlsnipplet" class="abc" onclick="modal(this)" src="/images/codesnippletProjekteHTML.png" alt="Projekte-HTML">
+
+      <h3 class="title">Redundanzen</h3>
+      <p class="text">Um Redundanzen im HTML Code möglichst gering zu halten, habe ich mich entschieden die Navigationsleisten
+        und den Footer mit HTML include in die index Seiten einzubinden.</p>
+      <img id="includesnipplet" class="abc" onclick="modal(this)" src="/images/codensippletIncludeHTML.png" alt="Include-JS">
+      <h3 class="title">Kontaktformular</h3>
+      <p class="text">Das Kontaktformular ist mit dem SMTP von Outlook verbunden und verwendet eine meiner Emailadressen,
+        um auf eine andere Emailadresse die Nachricht zu senden. Um die Sicherheitslücken, die mit der Anmeldung auf meine Emailadresse entstehen, zu stopfen.
+        Benutze ich einen SecureToken. Auch Spam wird gefiltert, da eine tatsächliche Eingabe in den Textfeldern bestehen muss.</p>
+      <img style="width:50%; margin-left: 25%;" class="abc" onclick="modal(this)" src="/images/codesnippletcontact.png" alt="Kontaktformular-JS">
+    </div>
+    <div class="lowestvessel">
+      <div class="boxdocu">
+        <p class="text">Latest Update: 26.12.2019</p>
+        <p class="side">GitHub: <a class="link" target="_blank" href="https://github.com/Doemuu/doemuu.github.io">doemuu.github.io</a></p>
+      </div>
+    </div>
+
   </div>
   <br><br>
   <br><br>
