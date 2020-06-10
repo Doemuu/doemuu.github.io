@@ -1,0 +1,128 @@
+body {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.btn-div {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  margin: 0 auto;
+  min-width: 200px;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgba(199, 199, 199,.7);
+  border: solid rgba(56, 41, 1, 1) 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 100px;
+  flex: 1;
+}
+
+.btn:hover {
+  cursor: pointer;
+  padding: 11px;
+}
+
+.cousinpage {
+  text-align: center;
+  margin: 0 auto;
+
+  .banner {
+    border-top: solid 4px rgba(56, 41, 1,.8);
+    background-color: rgba(120, 246, 255, 0.2);
+    padding: 10px;
+
+    p {
+      text-align: justify;
+    }
+  }
+
+  .form {
+    border: solid 1px black;
+    width: 50%;
+    min-width: 300px;
+    margin: 50px auto !important;
+
+    .continue {
+      padding: 10px;
+      display: flex;
+
+      .btn {
+        flex: 1;
+      }
+    }
+
+    .form-name {
+      height: 50%;
+
+      .form-input {
+        display: flex;
+        justify-content: center;
+        height: 25px;
+
+        .wrongInput {
+          color: red;
+        }
+
+        .required {
+          height: inherit;
+          color: red;
+          padding-left: 5px;
+        }
+      }
+    }
+
+    .dates {
+      display: flex;
+      width: 10%;
+      min-width: 100px;
+      margin: 0 auto;
+      justify-content: space-around;
+      select{
+        height:37px;
+      }
+      a {
+        margin-left:5px;
+        padding-left:5px;
+        padding-right:5px;
+        border-radius: 10%;
+        border:solid black 1px;
+        font-size: 27px;
+      }
+      a:hover{
+        cursor:pointer;
+        background-color:  rgba(120, 246, 255, 0.2);
+      }
+    }
+  }
+
+  .accompanied {
+    height: 10%;
+
+    .form-checkbox {
+      margin: 0 auto;
+      text-align: left;
+      width: 10%;
+      min-width: 100px;
+    }
+  }
+}
+
+.fullscreen-cousinpage {
+  text-align: center;
+  border-top: solid 0.5vh rgba(56, 41, 1,.8);
+  background-color: rgba(120, 246, 255, 0.3);
+  height: 99.5vh;
+  position: absolute;
+
+  .banner {
+    padding: 10px;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
