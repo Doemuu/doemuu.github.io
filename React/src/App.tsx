@@ -7,14 +7,12 @@ import Cousin from "./pages/cousins/cousin";
 
 function App() {
   return (
-    <BrowserRouter>
       <Switch>
           <Route path="/" exact>
               <Home/>
           </Route>
           <Route path="/cousin" component={Cousin}/>
       </Switch>
-    </BrowserRouter>
   );
 }
 

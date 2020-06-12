@@ -1,104 +1,71 @@
 import React from 'react';
 import Progressbar from '../../../components/progessbar/progressbar';
 
-import { StageProps, PersonalDate} from "./../cousin";
+import { StageProps, PersonalDate } from "./../cousin";
 
 import "../cousin.scss";
 
 
 interface stagethreeProps extends StageProps {
-    handleDates :((dates: PersonalDate[]) => void)
+  handleDates: ((dates: PersonalDate[]) => void);
 }
 
 interface stagethreeState {
-  chosenDate: PersonalDate,
-  possibleDates: PersonalDate[],
-  dates: PersonalDate[],
-  correctInput: boolean
+  selectedIndex: number;
+  possibleDates: PersonalDate[];
+  dates: PersonalDate[];
 }
 
 class StageThree extends React.Component<stagethreeProps, stagethreeState> {
-
   constructor(props: stagethreeProps) {
     super(props);
-    var d = {
-      date: "Keins"
-    }
+
     this.state = {
-      chosenDate: d,
-      possibleDates: [], dates: [
+      selectedIndex: 0,
+      possibleDates: [],
+      dates: [
         { date: "Keins" },
         { date: "SO 28. Juni" },
         { date: "SO 05. Juli" },
         { date: "SO 12. Juli" },
         { date: "SO 26. Juli" },
         { date: "SA 01. August" },
-        { date: "SO 16. August" }
-
+        { date: "SO 16. August" },
       ],
-      correctInput: false
-    }
-
-    this.addDate = this.addDate.bind(this);
-    this.addChosenDate = this.addChosenDate.bind(this);
-    this.functionresult = this.functionresult.bind(this);
+    };
   }
 
-  addChosenDate(date: string) {
-    var d = {
-      date: date
+  addDate = () => {
+    const selectedDate = this.state.dates[this.state.selectedIndex];
+
+    if (selectedDate.date !== "Keins") {
+      this.setState({
+        possibleDates: [...this.state.possibleDates, selectedDate],
+        dates: this.state.dates.filter((date: PersonalDate, index: number) => {
+          return index !== this.state.selectedIndex && date.date !== "Keins";
+        }),
+        selectedIndex: 0,
+      });
+    } else if (this.state.possibleDates.length === 0) {
+      this.setState({
+        possibleDates: [selectedDate],
+        dates: [],
+        selectedIndex: 0,
+      })
     }
-    this.setState({ chosenDate: d });
   }
 
-  addDate(date: PersonalDate) {
-    const array = this.state.possibleDates;
-
-    array.push(date);
-    const arraydates = this.state.dates;
-    if (date.date === "Keins") {
-      this.setState({ dates: [] });
-    } else {
-      if (this.state.possibleDates.length === 1) {
-        arraydates.splice(0, 1);
-      }
-      let index = -1;
-      for (let i = 0; i < arraydates.length; i++) {
-        if (arraydates[i].date === date.date) {
-          var d;
-          let retVal = "";
-          if (i === arraydates.length - 1) {
-            //last digit
-            d = {
-              date: arraydates[0].date
-            }
-            retVal = d.date;
-          } else {
-            d = {
-              date: arraydates[i + 1].date
-            }
-            retVal = d.date;
-          }
-          this.addChosenDate(retVal);
-          index = i;
-        }
-      }
-      if (index > -1) {
-        arraydates.splice(index, 1);
-      }
-      this.setState({ dates: arraydates });
-    }
-    this.setState({ possibleDates: array });
-  }
-
-  functionresult() {
+  handleClick = () => {
     if (this.state.possibleDates[0] !== undefined) {
       this.props.handleDates(this.state.possibleDates);
-      this.props.changeStage(4);
+      this.props.changeStage();
     }
   }
 
   render() {
+    const { changeStage, numberofstages, setDetails, children } = this.props;
+    const { dates, selectedIndex, possibleDates } = this.state;
+
     return (
       <div className="cousinpage">
         <div className="banner">
@@ -111,31 +78,27 @@ class StageThree extends React.Component<stagethreeProps, stagethreeState> {
           well s datum denne gsetzt werd! (!!ANNE!!)</p>
           <br />
           <div className="btn-div">
-            <a className="btn" onClick={() => this.props.changeStage(-1)}>Details</a>
+            <a className="btn" onClick={setDetails}>Details</a>
           </div>
         </div>
         <div className="form">
-          <Progressbar stages={this.props.numberofstages} activestage={3} handleClick={this.props.changeStage} />
+          {children}
           <p>Wähle bitte ALLE die Daten aus, die dir passen!</p>
-          {this.state.dates.length === 0 ?
-            <div>
-            </div>
-            :
+          {dates.length > 0 &&
             <div className="dates">
-              <select name="dateselector" onChange={e => this.addChosenDate(e.target.value)}>
-                {this.state.dates.map((date, i) => <option key={i} >{date.date}
+              <select name="dateselector" value={dates[selectedIndex].date} onChange={e => this.setState({ selectedIndex: e.target.selectedIndex })}>
+                {dates.map((date, i) => <option key={i} >{date.date}
                 </option>)}
               </select>
               <div>
-                <a onClick={() => this.addDate(this.state.chosenDate)}>+</a>
+                <a onClick={this.addDate}>+</a>
               </div>
-            </div>
-          }
+            </div>}
           <div>
-            {this.state.possibleDates.map((date, index) => <p key={index}>{date.date}</p>)}
+            {possibleDates.map((date, index) => <p key={index}>{date.date}</p>)}
           </div>
           <div className="continue">
-            <a className="btn" onClick={() => this.functionresult()}>Weiter</a>
+            <a className="btn" onClick={this.handleClick}>Weiter</a>
           </div>
         </div>
       </div>

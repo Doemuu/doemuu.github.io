@@ -10,7 +10,8 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
       from,
       company,
       dates,
-      idea
+      idea,
+      comment
     } = req.body;
 
     /*
@@ -31,21 +32,16 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
     */
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
+      service: "gmail",
       auth: {
-        user: 'doemu@outlook.com',
-        pass: 'kleinholz9898',
+        user: 'doemuu.live@gmail.com',
+        pass: 'Kleinholz9898',
       },
-      secureConnection: false,
-      tls: {
-        ciphers: 'SSLv3'
-      }
     });
 
     const mailOptions = {
-      from: 'Doemuu Outlook <doemu@outlook.com>',
-      to: 'Doemuu Outlook <doemu@outlook.com>',
+      from: 'Doemuu Gmail <doemuu.live@gmail.com>',
+      to: 'Doemuu Gmail<doemu@outlook.com>',
       subject: `Cousin Response from ${from[0].toUpperCase() + from.slice(1).toLowerCase()}`,
       html: `
             <style>
@@ -62,13 +58,14 @@ exports.sendEmail = functions.https.onRequest((req, res) => {
               }
             </style>
             <div>
-              <h1>Yo Boi ${from} here!</h1>
+              <h1>Yo, ${from} here!</h1>
               <p>Ich bin ${company ? "in Begleitung" : "4EvaAlonE"}.</p>
               <p><strong>Präferierte Daten:</strong></p>
               <ul>
                 ${dates.map(date => `<li>${date.date}</li>`)}
               </ul>
               <p>Ich will ${idea === "weggis" ? "an den See." : "in eine Waldhütte."}</p>
+              <p>Ich will hinzufügen, dass </br> ${comment}</p>
             </div>`
     };
 

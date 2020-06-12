@@ -20,8 +20,8 @@ function StageZero(props: stageZeroProps) {
         well s datum denne gsetzt werd! (!!ANNE!!)</p>
         <br/>
         <div className="btn-div">
-          <a className="btn" onClick={() => props.changeStage(1)}>Beginnen</a>
-          <a className="btn" onClick={() => props.changeStage(-1)}>Details</a>
+          <a className="btn" onClick={props.changeStage}>Beginnen</a>
+          <a className="btn" onClick={props.setDetails}>Details</a>
         </div>
       </div>
     </div>

@@ -6,41 +6,55 @@ import StageOne from './stages/stageOne';
 import StageTwo from "./stages/stageTwo";
 import StageThree from "./stages/stageThree";
 import StageFour from "./stages/stageFour";
+import StageFive from "./stages/stageFive";
+import Progressbar from '../../components/progessbar/progressbar';
+
 import Detail from "./detail";
 
 import "./cousin.scss";
 
 export interface StageProps {
-  changeStage: ((index: number) => void);
+  changeStage: (() => void);
   numberofstages: number;
+  setDetails: (() => void);
+  children?: React.ReactNode;
 }
 
 export interface PersonalDate {
   date: string;
 }
 
-interface CousinProps {
-
-}
-
 interface CousinState {
   numberofstages: number;
-  stage: number;
+  stages: number[];
   details: boolean;
   name: string;
   accompanied: boolean;
   dates: PersonalDate[];
   idea: string;
+  comment: string;
 }
 
-class Cousin extends React.Component<CousinProps, CousinState>{
-  constructor(props: CousinProps) {
+class Cousin extends React.Component<{}, CousinState>{
+  constructor(props: {}) {
     super(props);
-    this.state = { numberofstages: 5, stage: 0, details: false, name: "", accompanied: false, dates: [], idea: "" };
+
+    this.state = {
+      numberofstages: 6,
+      stages: [0],
+      details: false,
+      name: "",
+      accompanied: false,
+      dates: [],
+      idea: "",
+      comment: "",
+    };
   }
 
   handleStageChange = (stage: number) => {
-    this.setState({ stage: stage });
+    return () => {
+      this.setState({ stages: [...this.state.stages, stage] });
+    };
   }
 
   handleNameEntry = (name: string) => {
@@ -59,14 +73,23 @@ class Cousin extends React.Component<CousinProps, CousinState>{
     this.setState({ idea: idea });
   }
 
+  handleComment = (comment: string) => {
+    this.setState({ comment: comment });
+  }
+
+  handleDetails = () => {
+    this.handleStageChange(-1)();
+  }
+
   handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     axios.post('https://us-central1-cousintreffe.cloudfunctions.net/sendEmail', {
-        from: this.state.name,
-        company: this.state.accompanied,
-        dates: this.state.dates,
-        idea: this.state.idea,
+      from: this.state.name,
+      company: this.state.accompanied,
+      dates: this.state.dates,
+      idea: this.state.idea,
+      comment: this.state.comment
     }).then((response: AxiosResponse) => {
       console.log(response);
     }).catch((error: AxiosError) => {
@@ -75,43 +98,57 @@ class Cousin extends React.Component<CousinProps, CousinState>{
   }
 
   render() {
-    switch (this.state.stage) {
+    const { stages, numberofstages, name, dates, accompanied, idea, comment } = this.state;
+    const activeStage = stages[stages.length - 1];
+
+    const props = {
+      setDetails: this.handleStageChange(-1),
+      numberofstages: numberofstages,
+      handleName: this.handleNameEntry,
+      handleCompany: this.handleCompany,
+      handleDates: this.handleDates,
+      handleIdea: this.handleIdea,
+      handleComment: this.handleComment,
+      children: <Progressbar stages={numberofstages}
+        activestage={activeStage}
+        handleClick={this.handleStageChange} />,
+      changeStage: this.handleStageChange(activeStage + 1),
+    }
+
+    switch (activeStage) {
       case 0: return (
-        <StageZero numberofstages={this.state.numberofstages} changeStage={this.handleStageChange} />
+        <StageZero {...props} />
       );
       case 1: return (
-        <StageOne numberofstages={this.state.numberofstages} handleName={this.handleNameEntry} changeStage={this.handleStageChange} />
+        <StageOne {...props} />
       );
       case 2: return (
-        <StageTwo numberofstages={this.state.numberofstages} handleCompany={this.handleCompany} changeStage={this.handleStageChange} />
+        <StageTwo {...props} />
       );
       case 3: return (
-        <StageThree numberofstages={this.state.numberofstages} handleDates={this.handleDates} changeStage={this.handleStageChange} />
+        <StageThree {...props} />
       );
       case 4: return (
-        <StageFour numberofstages={this.state.numberofstages} handleIdea={this.handleIdea} changeStage={this.handleStageChange} />
+        <StageFour {...props} />
       );
-      case 6: return(
-        <Detail />
+      case 5: return (
+        <StageFive {...props} />
+      );
+      case -1: return (
+        <Detail clickBack={this.handleStageChange(stages[stages.length - 2])} />
       );
       default:
         return (
           <div className="cousinpage">
-            <div className="banner">
-              <h1>Cousin/e Treffe</h1>
-              <h3>Hey alli metenand!</h3>
-              <p>Wie er secher alli wössed versueched verschednigsti vo üs emmer weder es Treffe mett de Famelie z'organisiere.
-              Leider hett's no nie klappet. Dorom hend ech (Dömu) ond Dzena nomol en Versuech gstartet öppis z'plane. Ech glaube dass bi allne vo euch es Interesse bestoht
-              werom die Frog grad wegfallt. Bitte fölled s'formular so gli wie möglech us. Meh Details zo was d Idee esch fended er ondter details.<a onClick={e => this.setState({ details: true })}>do</a></p>
-            </div>
-            <form>
-              <p>{this.state.name}</p>
-              <p>{this.state.accompanied.toString()}</p>
-              {this.state.dates.map((date, i) => <p key={i} >{date.date}
+            <div className="list">
+              <p>✔ {name}</p>
+              <p>✔ {accompanied ? "In Begleitung" : "Alleine"}</p>
+              {dates.map((date, i) => <p key={i} >{date.date}
               </p>)}
-              <p>{this.state.idea}</p>
+              <p>✔ {idea === "weggis" ? "An den See" : "In eine Waldhütte"}</p>
+              <p>✔ {comment === "" ? "Kein Kommentar" : comment}</p>
               <button onClick={this.handleClick} className="btn">Absenden</button>
-            </form>
+            </div>
           </div>
         );
     }

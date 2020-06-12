@@ -6,20 +6,20 @@ import { StageProps} from "./../cousin";
 import "../cousin.scss";
 
 
-interface stagefourProps extends StageProps {
-    handleIdea :((idea: string) => void)
+interface stagefiveProps extends StageProps {
+    handleComment :((comment: string) => void)
 }
 
-interface stagefourState {
-  idea: string
+interface stagefiveState {
+  comment: string
 }
 
-class StageFour extends React.Component<stagefourProps, stagefourState> {
+class StageFive extends React.Component<stagefiveProps, stagefiveState> {
 
-  constructor(props: stagefourProps) {
+  constructor(props: stagefiveProps) {
     super(props);
     this.state = {
-      idea:""
+      comment:""
     }
 
     this.functionresult = this.functionresult.bind(this);
@@ -27,10 +27,8 @@ class StageFour extends React.Component<stagefourProps, stagefourState> {
 
 
   functionresult() {
-    if(this.state.idea !== ""){
-      this.props.handleIdea(this.state.idea);
+      this.props.handleComment(this.state.comment);
       this.props.changeStage();
-    }
   }
 
   render() {
@@ -51,20 +49,18 @@ class StageFour extends React.Component<stagefourProps, stagefourState> {
         </div>
         <div className="form">
           {this.props.children}
-          <div className="accompanied">
+          <div className="">
           <p>Welche der beiden Ideen bevorzugst du?</p>
-          <div className="form-checkbox">
+          <div className="">
             <form>
-              <input type="radio" name="form" value="weggis" onChange={e => this.setState({idea:e.target.value})}/>
-              <span>See</span>
-              <br />
-              <input type="radio" name="form" value="waldhutte" onChange={e => this.setState({idea: e.target.value})}/>
-              <span>Waldhütte</span>
+              <textarea placeholder="Hast du etwas hinzuzufügen?" onChange={e => this.setState({comment : e.target.value})}>
+
+              </textarea>
             </form>
           </div>
           </div>
           <div className="continue">
-            <a className="btn" onClick={() => this.functionresult()}>Weiter</a>
+            <a className="btn" onClick={() => this.functionresult()}>Beenden</a>
           </div>
         </div>
       </div>
@@ -74,4 +70,4 @@ class StageFour extends React.Component<stagefourProps, stagefourState> {
 
 }
 
-export default StageFour;
+export default StageFive;

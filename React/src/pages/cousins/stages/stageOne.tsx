@@ -25,7 +25,7 @@ function StageOne(props: stageOneProps) {
   const functionresult = () =>{
     let result = checkCorrectEntry();
     if(result){
-      props.changeStage(2);
+      props.changeStage();
       props.handleName(entry);
     }
   }
@@ -42,11 +42,11 @@ function StageOne(props: stageOneProps) {
         well s datum denne gsetzt werd! (!!ANNE!!)</p>
         <br />
         <div className="btn-div">
-          <a className="btn" onClick={() => props.changeStage(-1)}>Details</a>
+          <a className="btn" onClick={props.setDetails}>Details</a>
         </div>
       </div>
       <div className="form">
-        <Progressbar stages={props.numberofstages} activestage={1} handleClick={props.changeStage} />
+        {props.children}
         <div className="form-name">
           <p>Vorname</p>
           <div className="form-input">

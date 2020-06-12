@@ -16,7 +16,7 @@ function StageTwo(props: stagetwoProps) {
 
   const functionresult = () => {
     evaluateResult();
-    props.changeStage(3);
+    props.changeStage();
   }
 
   const evaluateResult = () =>{
@@ -39,11 +39,11 @@ function StageTwo(props: stagetwoProps) {
         well s datum denne gsetzt werd! (!!ANNE!!)</p>
         <br />
         <div className="btn-div">
-          <a className="btn" onClick={() => props.changeStage(-1)}>Details</a>
+          <a className="btn" onClick={props.setDetails}>Details</a>
         </div>
       </div>
       <div className="form">
-        <Progressbar stages={props.numberofstages} activestage={2} handleClick={props.changeStage} />
+        {props.children}
         <div className="accompanied">
           <p>Begleitung (+1)</p>
           <div className="form-checkbox">
