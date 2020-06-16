@@ -33,6 +33,8 @@ interface CousinState {
   dates: PersonalDate[];
   idea: string;
   comment: string;
+  sent: boolean;
+  sendClicked: boolean;
 }
 
 class Cousin extends React.Component<{}, CousinState>{
@@ -48,6 +50,8 @@ class Cousin extends React.Component<{}, CousinState>{
       dates: [],
       idea: "",
       comment: "",
+      sent: false,
+      sendClicked: false,
     };
   }
 
@@ -83,6 +87,7 @@ class Cousin extends React.Component<{}, CousinState>{
 
   handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    this.setState({ sendClicked: true });
 
     axios.post('https://us-central1-cousintreffe.cloudfunctions.net/sendEmail', {
       from: this.state.name,
@@ -91,9 +96,10 @@ class Cousin extends React.Component<{}, CousinState>{
       idea: this.state.idea,
       comment: this.state.comment
     }).then((response: AxiosResponse) => {
-      console.log(response);
+      //it worked
+      this.setState({ sent: true });
     }).catch((error: AxiosError) => {
-      console.error(error);
+      //didnt work
     });
   }
 
@@ -141,13 +147,29 @@ class Cousin extends React.Component<{}, CousinState>{
         return (
           <div className="cousinpage">
             <div className="list">
-              <p>✔ {name}</p>
-              <p>✔ {accompanied ? "In Begleitung" : "Alleine"}</p>
-              {dates.map((date, i) => <p key={i} >{date.date}
-              </p>)}
-              <p>✔ {idea === "weggis" ? "An den See" : "In eine Waldhütte"}</p>
-              <p>✔ {comment === "" ? "Kein Kommentar" : comment}</p>
-              <button onClick={this.handleClick} className="btn">Absenden</button>
+              {!this.state.sendClicked ?
+                <div>
+                  <p>✔ {name}</p>
+                  <p>✔ {accompanied ? "In Begleitung" : "Alleine"}</p>
+                  {dates.map((date, i) => <p key={i} >{date.date}
+                  </p>)}
+                  <p>✔ {idea === "weggis" ? "An den See" : "In eine Waldhütte"}</p>
+                  <p>✔ {comment === "" ? "Kein Kommentar" : comment}</p>
+                  <button onClick={this.handleClick} className="btn">Absenden</button>
+                </div>
+                :
+                <div>
+                  {this.state.sent ?
+                    <div>
+                      <p>Vielen Dank fürs Ausfüllen, {this.state.name}</p>
+                    </div>
+                    :
+                    <div>
+                      <p>Sending...</p>
+                    </div>
+                    }
+                </div>
+              }
             </div>
           </div>
         );

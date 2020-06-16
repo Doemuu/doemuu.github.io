@@ -1,11 +1,55 @@
 .details{
   text-align: center;
-  .idebtns{
-    display: flex;
-    width: 50%;
+  p{
+    padding:10px;
+  }
+  .back{
+    background-color: lightgrey;
+    padding:10px;
+    border:solid 1px black;
+  }
+  .ideabtns{
+    display:flex;
+    width:70%;
     margin: 0 auto;
-    .btn{
-      flex:1;
+    justify-content: space-around;
+    .button{
+      width:10%;
+      background-color: lightgrey;
+      width: 100px;
+      padding:10px;
+      border:solid 1px black;
     }
+    .button:hover{
+      padding:11px;
+      background-color: rgba(120, 246, 255, 0.3);
+    }
+  }
+  .vergleich{
+    display:flex;
+    border-bottom: solid 1px black;
+    width:80%;
+    margin:0 auto;
+    justify-content: space-around;
+    margin-bottom: 20px !important;
+    ul{
+      text-align: left;
+      word-break: break;
+    }
+    .nachteile{
+      flex:1;
+      border-left:solid 1px black;
+    }
+    .vorteile{
+      flex:1;
+      border-right:solid 1px black;
+    }
+  }
+  .link{
+    color:black;
+    text-decoration: none;
+  }
+  .link:hover{
+    cursor:pointer;
   }
 }

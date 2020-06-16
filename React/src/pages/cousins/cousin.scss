@@ -63,10 +63,6 @@ body {
         justify-content: center;
         height: 25px;
 
-        .wrongInput {
-          color: red;
-        }
-
         .required {
           height: inherit;
           color: red;
@@ -128,5 +124,6 @@ body {
 }
 
 textarea{
+  margin:10px;
   width: 50%;
 }
